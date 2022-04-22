@@ -1,7 +1,8 @@
 import React from "react";
+import { PokemonsContainer } from "./pages/PokemonsContainer";
 
 const App = () => {
-  return <div>App</div>;
+  return <PokemonsContainer />;
 };
 
 export default App;
