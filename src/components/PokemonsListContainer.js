@@ -1,5 +1,5 @@
 import React from "react";
-import { PokemonCart } from "./PokemonCart";
+import { PokemonCard } from "./PokemonCard";
 
 export const PokemonsListContainer = ({ pokemonsList }) => {
   return (
@@ -8,7 +8,7 @@ export const PokemonsListContainer = ({ pokemonsList }) => {
         {pokemonsList.map((pokemon) => {
           return (
             <div className="col-md-4" key={pokemon.id}>
-              <PokemonCart img={pokemon.img} name={pokemon.name} id={pokemon.id} />
+              <PokemonCard img={pokemon.img} name={pokemon.name} id={pokemon.id} />
             </div>
           );
         })}
