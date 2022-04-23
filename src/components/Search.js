@@ -7,7 +7,11 @@ export const Search = ({ setFilter, filter }) => {
 
   return (
     <div className="row">
-      <input type="text" onChange={handleChange} />
+      <input
+        type="text"
+        onChange={handleChange}
+        placeholder="Buscar Pokémon por nombre"
+      />
     </div>
   );
 };

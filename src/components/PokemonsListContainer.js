@@ -6,7 +6,7 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
     if (filter.search === "") return pokemonsList;
     else {
       return pokemonsList.filter((pokemon) =>
-        pokemon.name.includes(filter.search)
+        pokemon.name.includes(filter.search.toLowerCase())
       );
     }
   };

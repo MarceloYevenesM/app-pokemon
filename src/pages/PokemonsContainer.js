@@ -10,8 +10,6 @@ export const PokemonsContainer = () => {
     search: "",
   });
 
-  
-
   return (
     <div className="container">
       {isLoading ? (
