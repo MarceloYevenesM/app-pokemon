@@ -3,7 +3,7 @@ import "../styles/pokemonCard.css";
 
 export const PokemonCard = ({ img, name, id }) => {
   return (
-    <div className="col-md-4" key={id}>
+    <div className="col-md-6 col-lg-4" key={id}>
       <div className="card">
         <div className="img-top"></div>
         <div className="card-img-pokemon">

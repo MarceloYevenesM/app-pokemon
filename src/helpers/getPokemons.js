@@ -6,15 +6,22 @@ export const getPokemoms = async () => {
 };
 
 const getMoreInformation = (incompleteDataList) => {
-  const pokemonsArray = incompleteDataList.map((pokemon) => {
-    const pokeUrlArray = pokemon.url.split("/");
+  const pokemonsArray = Promise.all(
+    incompleteDataList.map(async (pokemon) => {
+      const pokeUrlArray = pokemon.url.split("/");
+      const pokemonID = pokeUrlArray[6];
 
-    return {
-      id: pokeUrlArray[6],
-      name: pokemon.name,
-      img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokeUrlArray[6]}.png`,
-    };
-  });
-  
+      const resp = await pokemonApi.get(`/pokemon/${pokemonID}/`);
+
+      return {
+        id: pokeUrlArray[6],
+        name: pokemon.name,
+        img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonID}.png`,
+        base_experience: resp.data.base_experience,
+        height: resp.data.height,
+      };
+    })
+  );
+
   return pokemonsArray;
 };

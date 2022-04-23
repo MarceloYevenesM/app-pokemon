@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { Pagination } from "./Pagination";
+
 import { PokemonCard } from "./PokemonCard";
 
 export const PokemonsListContainer = ({ pokemonsList, filter }) => {
@@ -11,18 +13,35 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
     }
   };
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 10;
+
+  const indexOfLastPokemon = currentPage * postsPerPage;
+  const indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
+  const currentPokemon = filteredPokemons().slice(
+    indexOfFirstPokemon,
+    indexOfLastPokemon
+  );
+
   return (
-    <div className="row">
-      {filteredPokemons().map((pokemon) => {
-        return (
-          <PokemonCard
-            key={pokemon.id}
-            img={pokemon.img}
-            name={pokemon.name}
-            id={pokemon.id}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div className="row">
+        {currentPokemon.map((pokemon) => {
+          return (
+            <PokemonCard
+              key={pokemon.id}
+              img={pokemon.img}
+              name={pokemon.name}
+              id={pokemon.id}
+            />
+          );
+        })}
+      </div>
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={filteredPokemons().length}
+        setCurrentPage={setCurrentPage}
+      ></Pagination>
+    </>
   );
 };

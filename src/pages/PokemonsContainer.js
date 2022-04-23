@@ -19,6 +19,7 @@ export const PokemonsContainer = () => {
           <h1 className="text-center">Listade de pokemons</h1>
           <Search setFilter={setFilter} filter />
           <PokemonsListContainer pokemonsList={pokemons} filter={filter} />
+          
         </>
       )}
     </div>
