@@ -1,4 +1,6 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../styles/pokemonCard.css";
 
 export const PokemonCard = ({ img, name, id }) => {
@@ -15,9 +17,9 @@ export const PokemonCard = ({ img, name, id }) => {
             {id} - {name}
           </h4>
 
-          <a href="#!" className="btn btn-outline-secondary" target="_blank">
-            Detalles
-          </a>
+          <Link to={`/pokemon/${id}`} className="link">
+            <Button variant="primary">Detalles</Button>
+          </Link>
         </div>
       </div>
     </div>

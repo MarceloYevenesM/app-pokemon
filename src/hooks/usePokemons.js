@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { getPokemoms } from "../helpers/getPokemons";
+import { getPokemons } from "../helpers/getPokemons";
 
 export const usePokemons = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
-    getPokemoms().then((pokemons) => {
+    getPokemons().then((pokemons) => {
       setTimeout(() => {
         setIsLoading(false);
       }, 1000);
