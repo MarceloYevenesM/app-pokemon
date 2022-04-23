@@ -8,21 +8,24 @@ export const Pagination = ({ postsPerPage, totalPosts, setCurrentPage }) => {
 
   return (
     <nav>
-      <ul className="pagination">
-        {pageNumbers.map((number) => (
-          <li className="page-item">
-            <a
-              href="!#"
-              className="page-link"
-              onClick={() => {
-                setCurrentPage(number);
-              }}
-            >
-              {number}
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="d-flex row justify-content-center align-items-center">
+        <div className="col-auto text-center">
+          <ul className="pagination flex-wrap">
+            {pageNumbers.map((number) => (
+              <li className="page-item">
+                <a
+                  className="page-link"
+                  onClick={() => {
+                    setCurrentPage(number);
+                  }}
+                >
+                  {number}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 };

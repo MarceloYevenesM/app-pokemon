@@ -14,7 +14,7 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
   };
 
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 10;
+  const postsPerPage = 12;
 
   const indexOfLastPokemon = currentPage * postsPerPage;
   const indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
@@ -24,7 +24,7 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
   );
 
   return (
-    <>
+    <div className="container">
       <div className="row">
         {currentPokemon.map((pokemon) => {
           return (
@@ -37,11 +37,13 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
           );
         })}
       </div>
-      <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={filteredPokemons().length}
-        setCurrentPage={setCurrentPage}
-      ></Pagination>
-    </>
+      <div className="row justify-content-end">
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={filteredPokemons().length}
+          setCurrentPage={setCurrentPage}
+        ></Pagination>
+      </div>
+    </div>
   );
 };
