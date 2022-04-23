@@ -1,7 +1,7 @@
 import { pokemonApi } from "../api/pokemonApi";
 
 export const getPokemoms = async () => {
-  const resp = await pokemonApi.get("/pokemon?limit=1000");
+  const resp = await pokemonApi.get("/pokemon?limit=200");
   return getMoreInformation(resp.data.results);
 };
 

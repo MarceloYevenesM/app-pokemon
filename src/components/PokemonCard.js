@@ -1,15 +1,24 @@
 import React from "react";
+import "../styles/pokemonCard.css";
 
-export const PokemonCart = ({ img, name, id }) => {
+export const PokemonCard = ({ img, name, id }) => {
   return (
-    <div className="card text-center bg-dark animate__animated animate__fadeInUp">
-      <div className="overflow">
-        <img src={img} alt="a wallpaper" className="card-img-top" />
-      </div>
-      <div className="card-body text-light">
-        <h4 className="card-title">
-          {id} - {name}
-        </h4>
+    <div className="col-md-4" key={id}>
+      <div className="card">
+        <div className="img-top"></div>
+        <div className="card-img-pokemon">
+          <img src={img} alt="a wallpaper" />
+        </div>
+
+        <div className="card-body text-center">
+          <h4 className="card-title">
+            {id} - {name}
+          </h4>
+
+          <a href="#!" className="btn btn-outline-secondary" target="_blank">
+            Detalles
+          </a>
+        </div>
       </div>
     </div>
   );
