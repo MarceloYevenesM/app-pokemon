@@ -3,9 +3,9 @@ import loadingPikachu from "../assets/pikachuball.gif";
 
 export const Loading = () => {
   return (
-    <div className="d-flex row vh-100 justify-content-center align-items-center">
+    <div className="d-flex row justify-content-center align-items-center">
       <div className="col-auto text-center">
-        <img src={loadingPikachu} alt="Cargando" className="fluid"/>
+        <img src={loadingPikachu} alt="Cargando" className="fluid" />
         <h2>Cargando contenido...</h2>
       </div>
     </div>
