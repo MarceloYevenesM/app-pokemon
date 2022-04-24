@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/search.css";
 
 export const Search = ({ setFilter, filter }) => {
   const handleChange = (e) => {
@@ -6,12 +7,11 @@ export const Search = ({ setFilter, filter }) => {
   };
 
   return (
-    <div className="row">
-      <input
-        type="text"
-        onChange={handleChange}
-        placeholder="Buscar Pokémon por nombre"
-      />
-    </div>
+    <input
+      className="inputSearch"
+      type="text"
+      onChange={handleChange}
+      placeholder="Buscar Pokémon por nombre"
+    />
   );
 };
