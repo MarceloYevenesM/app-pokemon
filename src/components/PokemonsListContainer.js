@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import { Pagination } from "./Pagination";
 
 import { PokemonCard } from "./PokemonCard";
+import { WithoutResults } from "./WithoutResults";
 
 export const PokemonsListContainer = ({ pokemonsList, filter }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 12;
+  const indexOfLastPokemon = currentPage * postsPerPage;
+  const indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
+
   const filteredPokemons = () => {
     if (filter.search === "") return pokemonsList;
     else {
@@ -13,18 +19,22 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
     }
   };
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 12;
+  if (filteredPokemons().length === 0) {
+    return (
+      <WithoutResults
+        text="No hay resultados para la búsqueda"
+        itHasAStartButton={false}
+      />
+    );
+  }
 
-  const indexOfLastPokemon = currentPage * postsPerPage;
-  const indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
   const currentPokemon = filteredPokemons().slice(
     indexOfFirstPokemon,
     indexOfLastPokemon
   );
 
   return (
-    <div className="container">
+    <>
       <div className="row">
         {currentPokemon.map((pokemon) => {
           return (
@@ -37,6 +47,7 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
           );
         })}
       </div>
+
       <div className="row justify-content-end">
         <Pagination
           postsPerPage={postsPerPage}
@@ -44,6 +55,6 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
           setCurrentPage={setCurrentPage}
         ></Pagination>
       </div>
-    </div>
+    </>
   );
 };
