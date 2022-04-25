@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/pokemonCard.css";
-import { Button } from "./Button";
+import { CustomButton } from "./CustomButton";
+
 
 export const PokemonCard = ({ img, name, id }) => {
   return (
@@ -18,7 +19,7 @@ export const PokemonCard = ({ img, name, id }) => {
           </h4>
 
           <Link to={`/pokemon/${id}`}>
-            <Button name="Detalles" />
+            <CustomButton name="Detalles" />
           </Link>
         </div>
       </div>
