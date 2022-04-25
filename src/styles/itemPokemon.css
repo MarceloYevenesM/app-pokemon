@@ -1,0 +1,28 @@
+.image {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #ff452b;
+  border-radius: 20px;
+}
+
+.namePokemon {
+  text-transform: capitalize;
+}
+
+.pokemonImg {
+  width: 100%;
+}
+
+.tarjet{
+  border-radius: 20px;
+  background-color: #ff452b;
+  color: #ECEFF1;
+  margin: 30px;
+  font-size: 20px;
+}
+
+.tarjet h5{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  list-style: none;
+}

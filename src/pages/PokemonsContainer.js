@@ -12,7 +12,7 @@ export const PokemonsContainer = () => {
     search: "",
   });
 
-  if (pokemons.length === 0) {
+  if (pokemons.length === 0 && isLoading===false) {
     return (
       <WithoutResults
         text="Ocurrio un error al cargar los datos, intente mas tarde"

@@ -5,9 +5,6 @@ import { WithoutResults } from "./WithoutResults";
 
 export const PokemonsListContainer = ({ pokemonsList, filter }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 12;
-  const indexOfLastPokemon = currentPage * postsPerPage;
-  const indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
 
   const filteredPokemons = () => {
     if (filter.search === "") return pokemonsList;
@@ -26,6 +23,11 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
       />
     );
   }
+
+
+  const postsPerPage = 12;
+  const indexOfLastPokemon = currentPage * postsPerPage;
+  const indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
 
   const currentPokemon = filteredPokemons().slice(
     indexOfFirstPokemon,
