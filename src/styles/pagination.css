@@ -1,0 +1,16 @@
+.pagination li .page-link {
+    border: 1px solid #ff452b;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+    color: #ff452b;
+}
+
+.pagination li .page-link:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+

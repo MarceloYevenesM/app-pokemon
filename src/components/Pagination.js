@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/pagination.css";
 
 export const Pagination = ({ postsPerPage, totalPosts, setCurrentPage }) => {
   const pageNumbers = [];
@@ -11,8 +12,8 @@ export const Pagination = ({ postsPerPage, totalPosts, setCurrentPage }) => {
       <div className="d-flex row justify-content-center align-items-center">
         <div className="col-auto text-center">
           <ul className="pagination flex-wrap">
-            {pageNumbers.map((number) => (
-              <li className="page-item">
+            {pageNumbers.map((number, i) => (
+              <li className="page-item" key={i}>
                 <button
                   className="page-link"
                   onClick={() => {

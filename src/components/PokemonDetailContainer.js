@@ -14,8 +14,13 @@ export const PokemonDetailContainer = () => {
   }
 
   if (pokemon.length === 0) {
-    return <WithoutResults text="No hay resultados para este código" itHasAStartButton={true} />;
+    return (
+      <WithoutResults
+        text="No hay resultados para este código"
+        itHasAStartButton={true}
+      />
+    );
   }
 
-  return <>{<ItemPokemon pokemon={pokemon} />}</>;
+  return <>{<ItemPokemon pokemon={pokemon} key={id} />}</>;
 };
