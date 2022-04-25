@@ -3,11 +3,12 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../styles/itemPokemon.css";
 import { CustomButton } from "./CustomButton";
+import { TypeDetail } from "./TypeDetail";
 
 export const ItemPokemon = (pokemon) => {
   const { id, name, base_experience, height, weight, sprites, stats, types } =
     pokemon.pokemon;
-  console.log(stats);
+
   return (
     <div className="d-flex row vh-100 justify-content-center align-items-center">
       <div className="col-10 col-sm-7 text-center">
@@ -38,10 +39,17 @@ export const ItemPokemon = (pokemon) => {
           <div className="card-body text-center">
             <h2 className="card-title namePokemon">{name}</h2>
             <h5 className="card-title">Experiencia base: {base_experience}</h5>
+
+            <div className="row justify-content-center align-items-center">
+              {types.map((type) => (
+                <TypeDetail type={type.type.name} />
+              ))}
+            </div>
+
             <div className="tarjet">
               <div className="row">
                 <div className="col-12 col-md-6">
-                  <h5>Altura: {height}cm</h5>
+                  <h5>Altura: {height}m</h5>
                   <h5>Hp: {stats[0].base_stat}</h5>
                   <h5>Ataque: {stats[1].base_stat}</h5>
                   <h5>Defensa: {stats[2].base_stat}</h5>
