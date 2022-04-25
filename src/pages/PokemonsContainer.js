@@ -12,8 +12,13 @@ export const PokemonsContainer = () => {
     search: "",
   });
 
-  if(pokemons.length===0){
-    return <WithoutResults text="Ocurrio un error al cargar los datos, intente mas tarde" itHasAStartButton={false}/>
+  if (pokemons.length === 0) {
+    return (
+      <WithoutResults
+        text="Ocurrio un error al cargar los datos, intente mas tarde"
+        itHasAStartButton={false}
+      />
+    );
   }
 
   return (
@@ -25,7 +30,7 @@ export const PokemonsContainer = () => {
           <div className="row">
             <h1 className="text-center title">Lista de Pokémons</h1>
           </div>
-          <div className="row">
+          <div className="container row">
             <Search setFilter={setFilter} filter />
           </div>
 
