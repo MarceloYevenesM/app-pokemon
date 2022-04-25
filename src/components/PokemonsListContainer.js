@@ -9,8 +9,10 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
   const filteredPokemons = () => {
     if (filter.search === "") return pokemonsList;
     else {
-      return pokemonsList.filter((pokemon) =>
-        pokemon.name.includes(filter.search.toLowerCase())
+      return pokemonsList.filter(
+        (pokemon) =>
+          pokemon.name.includes(filter.search.toLowerCase().trim()) ||
+          pokemon.id.includes(filter.search.toLowerCase().trim())
       );
     }
   };
@@ -24,15 +26,24 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
     );
   }
 
-
   const postsPerPage = 12;
-  const indexOfLastPokemon = currentPage * postsPerPage;
-  const indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
+  let indexOfLastPokemon;
+  let indexOfFirstPokemon;
+
+  if (filter.search.length === 0) {
+    indexOfLastPokemon = currentPage * postsPerPage;
+    indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
+  } else {
+    indexOfLastPokemon = 1 * postsPerPage;
+    indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
+  }
 
   const currentPokemon = filteredPokemons().slice(
     indexOfFirstPokemon,
     indexOfLastPokemon
   );
+
+  console.log(indexOfFirstPokemon);
 
   return (
     <>

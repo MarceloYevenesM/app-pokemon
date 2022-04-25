@@ -11,7 +11,7 @@ export const Search = ({ setFilter, filter }) => {
       className="inputSearch"
       type="text"
       onChange={handleChange}
-      placeholder="Buscar Pokémon por nombre"
+      placeholder="Buscar Pokémon por nombre o por número"
     />
   );
 };

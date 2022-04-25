@@ -41,8 +41,8 @@ export const ItemPokemon = (pokemon) => {
             <h5 className="card-title">Experiencia base: {base_experience}</h5>
 
             <div className="row justify-content-center align-items-center">
-              {types.map((type) => (
-                <TypeDetail type={type.type.name} />
+              {types.map((type, i) => (
+                <TypeDetail type={type.type.name} key={i} />
               ))}
             </div>
 
