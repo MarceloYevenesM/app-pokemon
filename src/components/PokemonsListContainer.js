@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Pagination } from "./Pagination";
-
 import { PokemonCard } from "./PokemonCard";
 import { WithoutResults } from "./WithoutResults";
 

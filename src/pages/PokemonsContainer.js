@@ -4,12 +4,17 @@ import { usePokemons } from "../hooks/usePokemons";
 import { Search } from "../components/Search";
 import { useState } from "react";
 import "../styles/pokemonContainer.css";
+import { WithoutResults } from "../components/WithoutResults";
 
 export const PokemonsContainer = () => {
   const { isLoading, pokemons } = usePokemons();
   const [filter, setFilter] = useState({
     search: "",
   });
+
+  if(pokemons.length===0){
+    return <WithoutResults text="Ocurrio un error al cargar los datos, intente mas tarde" itHasAStartButton={false}/>
+  }
 
   return (
     <>
