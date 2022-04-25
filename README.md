@@ -9,7 +9,7 @@ Se incluyeron las siguientes dependencias:
 
 | Nombre | Versión | Link |
 | ------ | ------- | ---- |
-| Axios | 0.26.1 | https://www.npmjs.com/package/alertify.js |
+| Axios | 0.26.1 | https://www.npmjs.com/package/axios |
 | Bootstrap | 5.1.3 | https://react-bootstrap.github.io/getting-started/introduction |
 | React Router | 6.3.0 | https://www.npmjs.com/package/react-router |
 
