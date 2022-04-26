@@ -10,10 +10,10 @@ export const ItemPokemon = (pokemon) => {
     pokemon.pokemon;
 
   return (
-    <div className="d-flex row vh-100 justify-content-center align-items-center">
-      <div className="col-10 col-sm-7 text-center">
+    <div className="d-flex row vh-100 justify-content-center">
+      <div className="col-10 col-sm-7">
         <div className="card">
-          <Card.Header>Nº{id}</Card.Header>
+          <Card.Header className="text-center">Nº{id}</Card.Header>
           <br />
           <div className="container">
             <div className="row">
@@ -36,21 +36,24 @@ export const ItemPokemon = (pokemon) => {
               </div>
             </div>
           </div>
-          <div className="card-body text-center">
-            <h1 className="card-title namePokemon">{name}</h1>
-            <h4 className="card-subtitle">
-              Experiencia base: {base_experience}
-            </h4>
+          <div className="card-body">
+            <h1 className="card-title namePokemon text-center">{name}</h1>
 
-            <h4 className="card-subtitle">Tipo:</h4>
             <div className="row justify-content-start align-items-start">
+              <h4 className="card-subtitle">
+                Experiencia base: {base_experience}
+              </h4>
+            </div>
+
+            <div className="row justify-content-start align-items-start">
+              <h4 className="card-subtitle">Tipo:</h4>
               {types.map((type, i) => (
                 <TypeDetail type={type.type.name} key={i} />
               ))}
             </div>
 
-            <div className="tarjet">
-              <div className="row">
+            <div className="tarjet align-items-center justify-content-center">
+              <div className="row items">
                 <div className="col-12 col-md-6">
                   <h5>Altura: {height}m</h5>
                   <h5>Hp: {stats[0].base_stat}</h5>
@@ -66,8 +69,10 @@ export const ItemPokemon = (pokemon) => {
               </div>
             </div>
 
-            <Link to={`/`} className="link">
-              <CustomButton name={"Volver al inicio"} />
+            <Link to={`/`}>
+              <div className="buttonPosition">
+                <CustomButton name={"Volver al inicio"} styles={"details"}/>
+              </div>
             </Link>
           </div>
         </div>

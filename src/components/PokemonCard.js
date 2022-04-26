@@ -18,7 +18,7 @@ export const PokemonCard = ({ img, name, id }) => {
           </h4>
 
           <Link to={`/pokemon/${id}`}>
-            <CustomButton name="Detalles" />
+            <CustomButton name="Detalles" styles={"detailsButton"}/>
           </Link>
         </div>
       </div>

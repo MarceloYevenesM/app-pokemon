@@ -36,3 +36,18 @@
 .card:hover {
   transform: scale(1.05);
 }
+
+.detailsButton {
+  border: 1px solid #ff452b;
+  color: #ff452b;
+  background-color: white;
+  font-size: 1rem;
+  padding: 6px 70px;
+
+  border-radius: 30px;
+}
+
+.detailsButton:hover {
+  background-color: rgb(245, 245, 245);
+  transform: scale(1.05);
+}
