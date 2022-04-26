@@ -1,18 +1,18 @@
 import { PokemonsListContainer } from "../components/PokemonsListContainer";
-import { Loading } from "../components/Loading";
-import { usePokemons } from "../hooks/usePokemons";
-import { Search } from "../components/Search";
 import { useState } from "react";
-import "../styles/pokemonContainer.css";
+import { usePokemons } from "../hooks/usePokemons";
+import { Loading } from "../components/Loading";
+import { Search } from "../components/Search";
 import { WithoutResults } from "../components/WithoutResults";
+import "../styles/pokemonContainer.css";
 
 export const PokemonsContainer = () => {
-  const { isLoading, pokemons } = usePokemons();
   const [filter, setFilter] = useState({
     search: "",
   });
+  const { isLoading, pokemons } = usePokemons();
 
-  if (pokemons.length === 0 && isLoading===false) {
+  if (pokemons.length === 0 && isLoading === false) {
     return (
       <WithoutResults
         text="Ocurrio un error al cargar los datos, intente mas tarde"
@@ -33,7 +33,6 @@ export const PokemonsContainer = () => {
           <div className="container row">
             <Search setFilter={setFilter} filter />
           </div>
-
           <PokemonsListContainer pokemonsList={pokemons} filter={filter} />
         </>
       )}

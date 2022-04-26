@@ -1,5 +1,5 @@
 import React from "react";
-import loadingPikachu from "../assets/pikachuball.gif";
+import loadingPikachu from "../assets/pikachuBall.gif";
 
 export const Loading = () => {
   return (

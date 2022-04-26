@@ -114,7 +114,7 @@ const typePicture = [
 
 export const TypeDetail = ({ type }) => {
   const pokemonType = typePicture.find((element) => element.type === type);
-  //console.log(pokemonType);
+
   return (
     <img
       className="col-auto"

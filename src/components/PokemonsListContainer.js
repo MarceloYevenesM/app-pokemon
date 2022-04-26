@@ -43,8 +43,6 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
     indexOfLastPokemon
   );
 
-  console.log(indexOfFirstPokemon);
-
   return (
     <>
       <div className="row">
