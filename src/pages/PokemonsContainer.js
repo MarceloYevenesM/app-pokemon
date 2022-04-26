@@ -28,7 +28,9 @@ export const PokemonsContainer = () => {
       ) : (
         <>
           <div className="row">
-            <h1 className="text-center title">Lista de Pokémons</h1>
+            <h1 className="text-center title">
+              ¡Vamos a conseguir Pokémon! <br /> ¡Atrápalos ya!
+            </h1>
           </div>
           <div className="container row">
             <Search setFilter={setFilter} filter />

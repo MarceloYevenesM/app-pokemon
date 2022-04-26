@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CustomButton } from "./CustomButton";
+import "../styles/withoutResults.css";
 import snorlax from "../assets/snorlax.gif";
 
 export const WithoutResults = ({ text, itHasAStartButton }) => {
@@ -11,7 +12,7 @@ export const WithoutResults = ({ text, itHasAStartButton }) => {
         <h2>{text}</h2>
         {itHasAStartButton && (
           <Link to={`/`}>
-            <CustomButton bsPrefix="details" name="Volver al inicio" />
+            <CustomButton name="Volver al inicio" styles="detailsButton"/>
           </Link>
         )}
       </div>

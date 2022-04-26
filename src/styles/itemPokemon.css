@@ -29,17 +29,22 @@
   list-style: none;
 }
 
-.items{
+.items {
   margin-left: 10px;
 }
 
-.buttonPosition{
-  
-  width: 20rem;
-  margin: 30px auto 30px auto;
+.buttonPosition {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .details {
+  display: inline-block;
+  outline: none;
   border: none;
   font-size: 1rem;
   background: #263238;
@@ -52,4 +57,3 @@
   background: #2b383f;
   transform: scale(1.05);
 }
-

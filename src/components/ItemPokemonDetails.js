@@ -5,7 +5,7 @@ import { CustomButton } from "./CustomButton";
 import { TypeDetail } from "./TypeDetail";
 import "../styles/itemPokemon.css";
 
-export const ItemPokemon = (pokemon) => {
+export const ItemPokemonDetails = (pokemon) => {
   const { id, name, base_experience, height, weight, sprites, stats, types } =
     pokemon.pokemon;
 

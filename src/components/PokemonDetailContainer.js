@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { usePokemon } from "../hooks/usePokemon";
 import { Loading } from "./Loading";
-import { ItemPokemon } from "./ItemPokemon";
+import { ItemPokemonDetails } from "./ItemPokemonDetails";
 import { WithoutResults } from "./WithoutResults";
 
 export const PokemonDetailContainer = () => {
@@ -22,5 +22,5 @@ export const PokemonDetailContainer = () => {
     );
   }
 
-  return <>{<ItemPokemon pokemon={pokemon} key={id} />}</>;
+  return <>{<ItemPokemonDetails pokemon={pokemon} key={id} />}</>;
 };
