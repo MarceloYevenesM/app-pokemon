@@ -26,19 +26,19 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
     );
   }
 
-  const postsPerPage = 12;
+  const pokemonsPerPage = 12;
   let indexOfLastPokemon;
   let indexOfFirstPokemon;
 
   if (filter.search.length === 0) {
-    indexOfLastPokemon = currentPage * postsPerPage;
-    indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
+    indexOfLastPokemon = currentPage * pokemonsPerPage;
+    indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
   } else {
-    indexOfLastPokemon = 1 * postsPerPage;
-    indexOfFirstPokemon = indexOfLastPokemon - postsPerPage;
+    indexOfLastPokemon = 1 * pokemonsPerPage;
+    indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
   }
 
-  const currentPokemon = filteredPokemons().slice(
+  const currentPokemons = filteredPokemons().slice(
     indexOfFirstPokemon,
     indexOfLastPokemon
   );
@@ -46,7 +46,7 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
   return (
     <>
       <div className="row">
-        {currentPokemon.map((pokemon) => {
+        {currentPokemons.map((pokemon) => {
           return (
             <PokemonCard
               key={pokemon.id}
@@ -60,8 +60,8 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
 
       <div className="row justify-content-end">
         <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={filteredPokemons().length}
+          pokemonsPerPage={pokemonsPerPage}
+          totalPokemons={filteredPokemons().length}
           setCurrentPage={setCurrentPage}
         ></Pagination>
       </div>

@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logo from "../assets/logoPokemon.png";
+import { Container, Navbar } from "react-bootstrap";
 import "../styles/header.css";
+import logo from "../assets/logoPokemon.png";
 
 export const Header = () => {
   return (

@@ -1,9 +1,13 @@
 import React from "react";
 import "../styles/pagination.css";
 
-export const Pagination = ({ postsPerPage, totalPosts, setCurrentPage }) => {
+export const Pagination = ({
+  pokemonsPerPage,
+  totalPokemons,
+  setCurrentPage,
+}) => {
   const pageNumbers = [];
-  for (let i = 1; i < Math.ceil(totalPosts / postsPerPage) + 1; i++) {
+  for (let i = 1; i < Math.ceil(totalPokemons / pokemonsPerPage) + 1; i++) {
     pageNumbers.push(i);
   }
 

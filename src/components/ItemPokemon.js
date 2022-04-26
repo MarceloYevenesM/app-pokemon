@@ -1,9 +1,9 @@
 import React from "react";
-import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "../styles/itemPokemon.css";
+import { Card } from "react-bootstrap";
 import { CustomButton } from "./CustomButton";
 import { TypeDetail } from "./TypeDetail";
+import "../styles/itemPokemon.css";
 
 export const ItemPokemon = (pokemon) => {
   const { id, name, base_experience, height, weight, sprites, stats, types } =
@@ -37,10 +37,13 @@ export const ItemPokemon = (pokemon) => {
             </div>
           </div>
           <div className="card-body text-center">
-            <h2 className="card-title namePokemon">{name}</h2>
-            <h5 className="card-title">Experiencia base: {base_experience}</h5>
+            <h1 className="card-title namePokemon">{name}</h1>
+            <h4 className="card-subtitle">
+              Experiencia base: {base_experience}
+            </h4>
 
-            <div className="row justify-content-center align-items-center">
+            <h4 className="card-subtitle">Tipo:</h4>
+            <div className="row justify-content-start align-items-start">
               {types.map((type, i) => (
                 <TypeDetail type={type.type.name} key={i} />
               ))}

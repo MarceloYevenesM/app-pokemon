@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/pokemonCard.css";
 import { CustomButton } from "./CustomButton";
-
+import "../styles/pokemonCard.css";
 
 export const PokemonCard = ({ img, name, id }) => {
   return (

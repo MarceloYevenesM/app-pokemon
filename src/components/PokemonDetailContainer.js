@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { usePokemon } from "../hooks/usePokemon";
-import { Loading } from "../components/Loading";
+import { Loading } from "./Loading";
 import { ItemPokemon } from "./ItemPokemon";
 import { WithoutResults } from "./WithoutResults";
 

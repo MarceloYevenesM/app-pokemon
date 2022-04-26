@@ -1,5 +1,4 @@
 import React from "react";
-
 import bug from "../assets/typePokemon/bug.png";
 import dark from "../assets/typePokemon/dark.png";
 import dragon from "../assets/typePokemon/dragon.png";

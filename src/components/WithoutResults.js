@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import snorlax from "../assets/snorlax.gif";
 import { CustomButton } from "./CustomButton";
+import snorlax from "../assets/snorlax.gif";
 
 export const WithoutResults = ({ text, itHasAStartButton }) => {
   return (

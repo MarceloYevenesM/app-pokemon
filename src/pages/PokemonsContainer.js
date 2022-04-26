@@ -1,6 +1,6 @@
-import { PokemonsListContainer } from "../components/PokemonsListContainer";
 import { useState } from "react";
 import { usePokemons } from "../hooks/usePokemons";
+import { PokemonsListContainer } from "../components/PokemonsListContainer";
 import { Loading } from "../components/Loading";
 import { Search } from "../components/Search";
 import { WithoutResults } from "../components/WithoutResults";
