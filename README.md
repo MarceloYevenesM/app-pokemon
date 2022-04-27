@@ -1,4 +1,6 @@
 # Pokédex
+<img width="1406" alt="image" src="https://user-images.githubusercontent.com/93208325/165419648-6f30e62f-ba37-4989-bc85-67d141a9affb.png">
+
 ## Proyecto prueba técnica Houm
 
 Desarrollo de una podédex para la prueba técnica de Houm.  
