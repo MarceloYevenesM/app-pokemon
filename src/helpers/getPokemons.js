@@ -15,7 +15,7 @@ const getMoreInformation = (incompleteDataList) => {
     const pokemonID = pokeUrlArray[6];
 
     return {
-      id: pokeUrlArray[6],
+      id: parseInt(pokeUrlArray[6]),
       name: pokemon.name,
       img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonID}.png`,
     };

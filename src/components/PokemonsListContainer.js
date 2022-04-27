@@ -6,14 +6,48 @@ import { WithoutResults } from "./WithoutResults";
 export const PokemonsListContainer = ({ pokemonsList, filter }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
+
+
+  function sortDescending(propName) {
+    return function (item1, item2) {
+      if (item1[propName] < item2[propName]) return 1;
+      if (item1[propName] > item2[propName]) return -1;
+      return 0;
+    };
+  }
+
+  function sortAscending(propName) {
+    return function (item1, item2) {
+      if (item1[propName] < item2[propName]) return -1;
+      if (item1[propName] > item2[propName]) return 1;
+      return 0;
+    };
+  }
+
   const filteredPokemons = () => {
-    if (filter.search === "") return pokemonsList;
-    else {
-      return pokemonsList.filter(
-        (pokemon) =>
+    const pokemonFilter = pokemonsList.filter((pokemon) => {
+      if (filter.name === "") {
+        return pokemon;
+      } else {
+        return (
           pokemon.name.includes(filter.search.toLowerCase().trim()) ||
-          pokemon.id.includes(filter.search.toLowerCase().trim())
-      );
+          pokemon.id.toString().includes(filter.search.toLowerCase().trim())
+        );
+      }
+    });
+
+    switch (filter.select) {
+      case "ascNum":
+        return pokemonFilter.sort(sortAscending("id"));
+      case "desNum":
+        return pokemonFilter.sort(sortDescending("id"));
+      case "ascName":
+        return pokemonFilter.sort(sortAscending("name"));
+      case "desName":
+        return pokemonFilter.sort(sortDescending("name"));
+
+      default:
+        return pokemonFilter;
     }
   };
 

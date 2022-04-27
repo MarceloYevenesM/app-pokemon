@@ -1,9 +1,9 @@
 
 
 .inputSearch {
-  padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  padding: 10px 20px;
+  margin: 15px 0px;
+  width: 100%;
   font-size: 20px;
   border: 1px solid rgb(38, 50, 56, 0.3);
   border-radius: 30px;
