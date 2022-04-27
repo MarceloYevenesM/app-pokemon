@@ -23,7 +23,7 @@ Justificación para el uso de cada libreria
 * React Router: Permite manejar todo lo referente a la navegación y rutas de la página de manera rápida y sencilla.  
 
 ## Demostración
-
+![Demostracion-Ppkedex](https://user-images.githubusercontent.com/93208325/165420614-5da33145-8c04-4115-b9df-8a6f9aeeb042.gif)
 
 
 ## Demo 
