@@ -1,8 +1,9 @@
 import React from "react";
 import "../styles/search.css";
 
-export const Search = ({ setFilter, filter }) => {
+export const Search = ({ setFilter, filter, setCurrentPage }) => {
   const handleChange = (e) => {
+    setCurrentPage(1);
     setFilter({ ...filter, search: e.target.value });
   };
 

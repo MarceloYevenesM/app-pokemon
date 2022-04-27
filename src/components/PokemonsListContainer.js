@@ -1,13 +1,13 @@
-import React, { useState } from "react";
 import { Pagination } from "./Pagination";
 import { PokemonCard } from "./PokemonCard";
 import { WithoutResults } from "./WithoutResults";
 
-export const PokemonsListContainer = ({ pokemonsList, filter }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-
-
+export const PokemonsListContainer = ({
+  pokemonsList,
+  filter,
+  currentPage,
+  setCurrentPage,
+}) => {
   function sortDescending(propName) {
     return function (item1, item2) {
       if (item1[propName] < item2[propName]) return 1;
@@ -64,13 +64,8 @@ export const PokemonsListContainer = ({ pokemonsList, filter }) => {
   let indexOfLastPokemon;
   let indexOfFirstPokemon;
 
-  if (filter.search.length === 0) {
-    indexOfLastPokemon = currentPage * pokemonsPerPage;
-    indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
-  } else {
-    indexOfLastPokemon = 1 * pokemonsPerPage;
-    indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
-  }
+  indexOfLastPokemon = currentPage * pokemonsPerPage;
+  indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
 
   const currentPokemons = filteredPokemons().slice(
     indexOfFirstPokemon,

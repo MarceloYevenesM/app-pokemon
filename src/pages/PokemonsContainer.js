@@ -13,6 +13,7 @@ export const PokemonsContainer = () => {
     select: "",
   });
   const { isLoading, pokemons } = usePokemons();
+  const [currentPage, setCurrentPage] = useState(1);
 
   if (pokemons.length === 0 && isLoading === false) {
     return (
@@ -36,7 +37,11 @@ export const PokemonsContainer = () => {
           </div>
           <div className="row">
             <div className="col-12 col-md-8">
-              <Search setFilter={setFilter} filter={{ ...filter }} />
+              <Search
+                setFilter={setFilter}
+                filter={{ ...filter }}
+                setCurrentPage={setCurrentPage}
+              />
             </div>
             <div className="col-12 col-md-4">
               <SelectFilters setFilter={setFilter} filter={{ ...filter }} />
@@ -45,6 +50,8 @@ export const PokemonsContainer = () => {
           <PokemonsListContainer
             pokemonsList={pokemons}
             filter={{ ...filter }}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
           />
         </>
       )}

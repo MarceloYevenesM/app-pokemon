@@ -12,8 +12,8 @@ export const SelectFilters = ({ setFilter, filter }) => {
       <option value="">Ordenar por...</option>
       <option value="ascNum">Ascendente por número</option>
       <option value="desNum">Descendente por número</option>
-      <option value="ascName">Ascendente por nombre</option>
-      <option value="desName">Descendente por nombre</option>
+      <option value="ascName">A-Z</option>
+      <option value="desName">Z-A</option>
     </Form.Select>
   );
 };
